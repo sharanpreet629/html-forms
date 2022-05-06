@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+  <title>Intro component with sign up form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    <div id="particles-js">
+        <canvas class="particles-js-canvas-el" style="overflow-y:auto"></canvas>
+    </div>
+      <script type="text/javascript" src="static/js/particles.js"></script>
+      <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- Info Section -->
+    <section class="info-section">
+      <div class="logo">
+            <img src="./static/images/small_logo.png">
+      </div>
+<!--      <h1> Learn to code by watching others</h1>-->
+<!--      <p> See how experienced developers solve problems in real-time. Watching scripted tutorials is great,-->
+<!--        but understanding how developers think is invaluable.</p>-->
+    </section>
+    <section class="form-section">
+      <div class="form-head" style="text-align: center">
+            <h1>Enquiry Form</h1>
+      </div>
+      <!-- Form -->
+      <form class="main-form" action="http://127.0.0.1:5000/enquiry/submit" method="POST" accept-charset="utf-8">
+        <!-- Username-->
+        <div class="input-field">
+          <input class="first-name" id="first-name" type="text" placeholder="First Name">
+          <div class="first-name-error"></div>
+          <label for="first-name" class="name-label"></label>
+        </div>
+        <!-- Lastname -->
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Last Name">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <!-- Father Name -->
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Father Name">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <!-- Email -->
+        <div class="input-field">
+          <input class="user-email" type="email" placeholder="Email Address">
+          <div class="user-email-error"></div>
+          <label for="user-email" class="email-label"></label>
+        </div>
+        <!-- Contact -->
+        <div class="input-field">
+          <input class="user-pass" type="text" placeholder="Contact Number">
+          <div class="user-pass-error"></div>
+          <label for="user-pass" class="pass-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Gender">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Address">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="City">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="State">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="College Name">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Course">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Year">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Courses">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <input class="last-name" type="text" placeholder="Reference">
+          <div class="last-name-error"></div>
+          <label for="last-name" class="lastname-label"></label>
+        </div>
+        <div class="input-field">
+          <label for="submit-info" class="success-msg"></label>
+          <button class="submit-info" id="submit-info" type="submit">Register</button>
+        </div>
+        <label class="tnc" for="submit-info"> By clicking the button, you are agreeing to our <a href="">Terms and
+            Services</a>
+        </label>
+      </form>
+    </section>
+  </main>
+
+  <script src="app1.js"></script>
+</body>
+
+</html>
