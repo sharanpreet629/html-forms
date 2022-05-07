@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>Student Registration Form</title>
+    <style media="screen">
+        body{
+            background-image:url({{url_for('static',filename = 'images/back_image.jpg')}});
+            background-repeat: no-repeat;
+            background-size: cover;
+      }
+
+        #particles-js{
+    height: auto;
+    width: 100%;
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    }
+    .wrapper .logo img
+    {
+        position: fixed;
+        margin-top: 60px;
+        margin-left: 77px;
+    }
+    .main{
+    margin-top:100px;
+    margin-bottom:100px;
+    }
+    .wrapper .card{
+        background: rgba(16, 16, 16, 0.4);
+        box-sizing: border-box;
+        border: 2px solid black;
+        border-radius: 12px;
+        padding-left: 100px;
+        padding-right: 100px;
+        padding-top: 20px;
+
+      }
+    .wrapper h1{
+        font-weight: bold;
+        color: white;
+        margin-bottom:50px;
+        font-size: 60px;
+
+       }
+
+      .wrapper h4{
+        font-weight: bold;
+        color: white;
+       }
+
+      label{
+        font-weight: bold;
+        color: white;
+        font-size: 20px;
+       }
+        wrapper .form-control{
+     padding: 5px;
+<!--     display:flex;-->
+    }
+    .wrapper .form-select{
+     padding: 5px;
+     display:flex;
+    }
+    .btn btn-primary{
+    text-align: center;
+    background-color:#131c55;
+    }
+    .clearfix{
+    clear: both;
+    }
+    @media screen and (max-width: 480px) {
+    .wrapper .logo img
+    {
+        position:relative;
+
+    }
+    .main{
+    margin-top:25px;
+    margin-bottom:50px;
+    }
+    .main .col-lg-5{
+    display:flex;
+    justify-content:center;
+
+    }
+    .wrapper .logo img
+    {
+        margin-top: 0px;
+        margin-left:0px
+    }
+    .wrapper .card{
+    padding-left:50px;
+    padding-right:50px;
+    }
+    .wrapper h1{
+        font-weight: bold;
+        color: white;
+        margin-bottom:50px;
+        font-size: 40px;
+
+       }
+    }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<section class="wrapper">
+      <div id="particles-js">
+        <canvas class="particles-js-canvas-el" style="overflow-y:auto"></canvas>
+    </div>
+      <script type="text/javascript" src="./static/js/particles.js"></script>
+      <script type="text/javascript" src="./static/js/app.js"></script>
+
+    <section>
+        <div class="container">
+            <div class="row main">
+                <div class="col-lg-5">
+                    <div class="logo">
+                          <img src="./static/images/small_logo.png">
+        <!--                    <b>{{Predict}}</b>-->
+                      </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="card" style="overflow-y:auto">
+                        <div class="card-header" style="text-align: center">
+                                <h1>Enquiry Form</h1>
+                        </div>
+                        <form action="http://127.0.0.1:5000/enquiry/submit" method="POST" accept-charset="utf-8">
+                <div class="row">
+                  <div class="col-lg-6 form-group">
+                    <label><b>First Name:</b></label>
+                    <input type="text" class ="form-control" name="firstname" id="fn" value="" placeholder="First Name" required>
+                    <br>
+                  </div>
+                  <div class="col-lg-6 form-group">
+                    <label><b>Last Name:</b></label>
+                    <input type="text" class ="form-control" name="lastname" id="ln" value="" placeholder="Last Name" required>
+                    <br>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label><b>Father Name:</b></label>
+                    <input type="text" class="form-control" name="fathername" id="ftn" value="" placeholder="Father Name" required>
+                     <br>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label><b>Email:</b></label>
+                    <input type="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" class="form-control" name="Email" id="temp" value="" placeholder="Email" required>
+                     <br>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label><b>Contact Number:</b></label>
+                    <input type="text" pattern="[6789][0-9]{9}" class="form-control" name="contactnumber" id="contact" value="" placeholder="Contact Number" required>
+                     <br>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label><b>Gender:</b></label>
+<!--                    <input type="text" class="form-control" name="ph" id="ph" value="" placeholder="Enter gender here">-->
+                      <select class="form-select" name="gender" required>
+                        <option selected>Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Not Prefer to say">Not Prefer to say</option>
+                      </select>
+                     <br>
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <label><b>Address:</b></label>
+                    <input type="text" class="form-control" name="address" id="rain" value="" placeholder="Street Address" required>
+                     <br>
+                  </div>
+
+
+                  <div class="col-md-6 form-group">
+<!--                    <label><b>Query:</b></label>-->
+                    <input type="text" class="form-control" name="city" id="1" value="" placeholder="City" required>
+                     <br>
+                  </div>
+                    <div class="col-md-6 form-group">
+<!--                    <label><b>Query:</b></label>-->
+                    <input type="text" class="form-control" name="state" id="0" value="" placeholder="State" required>
+                     <br>
+                  </div>
+                <div class="col-md-12 form-group">
+                    <label><b>Qualification:</b></label>
+                    <input type="text" class="form-control" name="institute" id="hello" value="" placeholder="Name of Institute" required>
+                     <br>
+                  </div>
+                  <div class="col-md-6 form-group">
+<!--                    <label><b>Qualification:</b></label>-->
+<!--                    <input type="text" class="form-control" name="rain" id="ql" value="" placeholder="Enter qualification here">-->
+                     <select class="form-select" name="courses">
+                        <option selected>Courses</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="B.Sc">B.Sc</option>
+                        <option value="B.C.A.">B.C.A.</option>
+                        <option value="B.A.">B.A.</option>
+                        <option value="M.Tech">M.Tech</option>
+                        <option value="M.C.A.">M.C.A.</option>
+                        <option value="Other">Other</option>
+
+                      </select>
+                     <br>
+                 </div>
+
+                    <div class="col-md-6 form-group">
+<!--                    <label><b>Year:</b></label>-->
+<!--                    <input type="text" class="form-control" name="rain" id="ql" value="" placeholder="Enter qualification here">-->
+                     <select class="form-select" name="year">
+                        <option selected>Year</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="Pass Out">Pass Out</option>
+
+
+                      </select>
+                     <br>
+                 </div>
+                    <div class="col-md-12 form-group">
+                    <label><b>Courses:</b></label>
+                      <select class="form-select" name="listcourses">
+                        <option selected>Course</option>
+                        <option value="Machine Learning">Machine Learning</option>
+                        <option value="Python">Python</option>
+                        <option value="Android">Android</option>
+                        <option value="UI/UX Designing">UI/UX Designing</option>
+                        <option value="PHP">PHP</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                      </select>
+                     <br>
+                 </div>
+
+                <div class="col-md-12 form-group">
+                <label><b>Reference:</b></label>
+                <input type="text" class="form-control" name="reference" id="3" value="" placeholder="Reference" required>
+                 <br>
+                 </div>
+
+
+                  <div class="col-md-12 form-group">
+                    <button type = "submit" class="btn btn-primary form-control">Submit</button>
+                    <br><br>
+<!--                     <div class="col-md-12 form-group" style = "text-align:center">-->
+<!--                     <h3>{{Predict}}</h3>-->
+
+                </div>
+                  </div>
+
+                   <br>
+
+              </form>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+</body>
+</html>
